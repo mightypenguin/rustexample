@@ -1,5 +1,11 @@
+extern crate simple_error;
+
 use regex::Regex;
-use base64::{Engine as _, engine::{self, general_purpose}, alphabet};
+use base64::{Engine as _, engine::general_purpose};
+
+mod example_traits;
+mod simple_error_example;
+use crate::example_traits::HasArea;
 
 fn main() {
     // Simple String printing
@@ -24,10 +30,12 @@ fn main() {
     let dat_array = dat.split_whitespace();
     println!("Original string: '{}'", dat);
 
+    // Notice the ".clone()"
     for (i, el) in dat_array.clone().enumerate() { 
         println!("Array index:{} Items: {:?}", i, el);
     }
     println!("Size:{}\n",dat_array.count());
+
 
     // String comparisons
     let s1 = "something";
@@ -45,10 +53,29 @@ fn main() {
     println!("Base64 version of '{}'='{}'\n",s1, b64);
 
 
-    // TODO Error handling example
-    
+    // Error handling
+    println!("{:?}", simple_error_example::run("23"));
+    println!("{:?}", simple_error_example::run("2x"));
+    println!("{:?}", simple_error_example::run(""));
+
+    let ret = match simple_error_example::run("2x") {
+        Ok(num) => num,
+        Err(e) => return Err(e)
+    };
+    println!("ERror handling ret={}",ret);
+    println!("");
+
+    //Traits
+    let c = example_traits::Circle {
+        x: 0.0f64,
+        y: 0.0f64,
+        radius: 4.2f64
+    };
+    println!("Circle's area is:{}", c.area());
+
 
 }
+
 
 #[cfg(test)]
 mod tests {

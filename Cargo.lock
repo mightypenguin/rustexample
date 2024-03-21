@@ -23,6 +23,7 @@ version = "0.1.0"
 dependencies = [
  "base64",
  "regex",
+ "simple-error",
 ]
 
 [[package]]
@@ -59,3 +60,9 @@ name = "regex-syntax"
 version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c08c74e62047bb2de4ff487b251e4a92e24f48745648451635cec7d591162d9f"
+
+[[package]]
+name = "simple-error"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8542b68b8800c3cda649d2c72d688b6907b30f1580043135d61669d4aad1c175"

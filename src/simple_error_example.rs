@@ -1,4 +1,3 @@
-#[macro_use]
 use std::error::Error;
 
 use simple_error::bail;

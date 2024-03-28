@@ -60,9 +60,12 @@ fn main() {
 
     let ret = match simple_error_example::run("2x") {
         Ok(num) => num,
-        Err(e) => return Err(e)
+        Err(e) => {
+            println!("Handle that error! Err:{}",e);
+            panic!();
+        }
     };
-    println!("ERror handling ret={}",ret);
+    println!("Error handling ret={}",ret);
     println!("");
 
     //Traits

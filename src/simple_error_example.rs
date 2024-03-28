@@ -13,11 +13,3 @@ pub fn run(s: &str) -> BoxResult<i32> {
     Ok(s.trim().parse()?)
 }
 
-// fn main() {
-//     println!("{:?}", run("23"));
-//     println!("{:?}", run("2x"));
-//     println!("{:?}", run(""));
-// }
-// Ok(23)
-// Err(ParseIntError { kind: InvalidDigit })
-// Err(StringError("empty string"))

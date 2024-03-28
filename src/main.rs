@@ -26,6 +26,7 @@ fn main() {
 
 
     // Borrow checker annoying us by "consuming" things
+    // Examples: https://doc.rust-lang.org/rust-by-example/fn/closures/capture.html
     let dat = "some data I want to split";
     let dat_array = dat.split_whitespace();
     println!("Original string: '{}'", dat);
@@ -62,7 +63,8 @@ fn main() {
         Ok(num) => num,
         Err(e) => {
             println!("Handle that error! Err:{}",e);
-            panic!();
+            // panic!();
+            -1 //return value without ";"
         }
     };
     println!("Error handling ret={}",ret);

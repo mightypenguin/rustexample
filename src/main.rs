@@ -70,7 +70,8 @@ fn main() {
     println!("Error handling ret={}",ret);
     println!("");
 
-    //Traits
+    
+    // Traits
     let c = example_traits::Circle {
         x: 0.0f64,
         y: 0.0f64,
@@ -78,6 +79,13 @@ fn main() {
     };
     println!("Circle's area is:{}", c.area());
 
+
+    // Async / await
+    // Need to use an Async Runtime
+    // https://rust-lang.github.io/async-book/08_ecosystem/00_chapter.html
+
+    // Discussion vs Go coroutines:
+    // https://www.reddit.com/r/rust/comments/u8uw3z/is_tokio_slow_or_is_it_just_being_compared/
 
 }
 
